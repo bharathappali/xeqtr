@@ -1,4 +1,4 @@
-package xeqtr
+package main
 
 import (
 	"fmt"
