@@ -11,7 +11,7 @@ type xeqtr_core struct {
 }
 
 var default_xeqtr_core_capacity int = runtime.NumCPU()
-var initialised_xeqtr_core *xeqtr_core
+var initialised_xeqtr_core *xeqtr_core = nil
 var once sync.Once
 
 func Create(capacity int) error {
