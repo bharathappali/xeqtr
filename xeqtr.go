@@ -27,7 +27,7 @@ func Create(capacity int) error {
 		if capacity <= max_xeqtr_core_capacity_limit {
 			fmt.Printf("WARN: capacity %d is greater than CPU's, you might experience a performance issue \n", capacity)
 		} else {
-			fmt.Errorf("capacity limit exceeded, please set the capacity limit less than or equal to max capacity : %d\n", max_xeqtr_core_capacity_limit)
+			return fmt.Errorf("capacity limit exceeded, please set the capacity limit less than or equal to max capacity : %d\n", max_xeqtr_core_capacity_limit)
 		}
 
 	}
