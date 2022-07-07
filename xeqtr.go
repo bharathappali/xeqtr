@@ -1,6 +1,7 @@
 package xeqtr
 
 import (
+	"errors"
 	"fmt"
 	"runtime"
 	"sync"
@@ -33,7 +34,7 @@ func Create(capacity int) error {
 
 func GetCapacity() (int, error) {
 	if initialised_xeqtr_core == nil {
-		return -1, fmt.Errorf("unable to get capacity")
+		return -1, errors.New("core unintialised")
 	}
 	return initialised_xeqtr_core.capacity, nil
 }
