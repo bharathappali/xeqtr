@@ -13,9 +13,9 @@ type xeqtr_core struct {
 var initialised_xeqtr_core *xeqtr_core
 var once sync.Once
 
-func Create(capacity int) bool {
+func Create(capacity int) (*xeqtr_core, error) {
 	if capacity <= 0 {
-		return false
+		return nil, fmt.Errorf("capacity must be positive and greater than 0")
 	}
 
 	if capacity > runtime.NumCPU() {
@@ -26,7 +26,7 @@ func Create(capacity int) bool {
 		initialised_xeqtr_core = &xeqtr_core{capacity: capacity}
 	})
 	fmt.Printf("capacity: %d\n", capacity)
-	return true
+	return initialised_xeqtr_core, nil
 }
 
 func GetCapacity() (int, error) {
