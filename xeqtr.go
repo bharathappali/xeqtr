@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-func create(capacity int) bool {
+func Create(capacity int) bool {
 	if capacity <= 0 {
 		return false
 	}
