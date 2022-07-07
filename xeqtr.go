@@ -20,7 +20,7 @@ func Create(capacity int) error {
 		fmt.Printf("Setting capacity to %d\n", default_xeqtr_core_capacity)
 	}
 
-	if capacity > runtime.NumCPU() {
+	if capacity > default_xeqtr_core_capacity {
 		fmt.Printf("WARN: capacity %d is greater than CPU's, you might experience a performance issue \n", capacity)
 	}
 
@@ -33,7 +33,7 @@ func Create(capacity int) error {
 
 func GetCapacity() (int, error) {
 	if initialised_xeqtr_core == nil {
-		return 0, fmt.Errorf("unable to get capacity")
+		return -1, fmt.Errorf("unable to get capacity")
 	}
 	return initialised_xeqtr_core.capacity, nil
 }
