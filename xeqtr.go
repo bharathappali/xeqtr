@@ -7,7 +7,7 @@ import (
 )
 
 type xeqtr_core struct {
-	capacity int
+	Capacity int
 }
 
 var initialised_xeqtr_core *xeqtr_core
